@@ -112,7 +112,7 @@ function organisationactivities_civicrm_caseTypes(&$caseTypes) {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
 function organisationactivities_civicrm_angularModules(&$angularModules) {
-_organisationactivities_civix_civicrm_angularModules($angularModules);
+  _organisationactivities_civix_civicrm_angularModules($angularModules);
 }
 
 /**
