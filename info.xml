@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<extension key="com.shkryob.organisationactivities" type="module">
+  <file>organisationactivities</file>
+  <name>Organisation Activities</name>
+  <description>The aim of this extension is to show all of the activities (i.e. phone calls, meetings, letters) for all of the persons who work at a particular organisation on the organisation contact record. This means that a user can quickly look at the “parent” organisation record and see all the communications with everyone who works there.</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Kostya Shkryob</author>
+    <email>shkryob@ya.ru</email>
+  </maintainer>
+  <urls>
+    <url desc="Main Extension Page">http://FIXME</url>
+    <url desc="Documentation">http://FIXME</url>
+    <url desc="Support">http://FIXME</url>
+    <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
+  </urls>
+  <releaseDate>2016-09-01</releaseDate>
+  <version>1.0</version>
+  <develStage>alpha</develStage>
+  <compatibility>
+    <ver>4.2</ver>
+  </compatibility>
+  <comments>This is a new, undeveloped module</comments>
+  <civix>
+    <namespace>CRM/Organisationactivities</namespace>
+  </civix>
+</extension>
