@@ -1,4 +1,5 @@
-<div data-ng-app="organisationactivities" data-ng-controller="OrganisationactivitiesCtrl">
+<div data-ng-app="organisationactivities"
+     data-ng-controller="OrganisationactivitiesCtrl">
     <div data-ng-show="inProgress">
         {ts}Please wait...{/ts}
     </div>
@@ -12,7 +13,7 @@
                     {ts}Activity{/ts}
                 </th>
                 <th>
-                    {ts}Employee{/ts}
+                    {ts}Person{/ts}
                 </th>
                 <th>
                     {ts}Status{/ts}

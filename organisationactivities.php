@@ -156,15 +156,19 @@ function organisationactivities_civicrm_navigationMenu(&$menu) {
 
 
 function organisationactivities_civicrm_tabset($tabsetName, &$tabs, $context) {
-    //check if the tabset is Contact Summary Page
-    if ($tabsetName == 'civicrm/contact/view') {
-        $contactID = $context['contact_id'];
-        $url = CRM_Utils_System::url( 'civicrm/organisation/activities',
-            "reset=1&snippet=1&force=1&cid=$contactID" );
-        $tabs[] = array( 'id'    => 'orgActivities',
-            'url'   => $url,
-            'title' => ts('All Activities'),
-            'weight' => 300,
-        );
-    }
+  $contactID = $context['contact_id'];
+  $result = civicrm_api3('Contact', 'get', array(
+    'sequential' => 1,
+    'id' => $contactID,
+  ));
+  if ($tabsetName == 'civicrm/contact/view' && $result['values'][0]['contact_type'] == 'Organization') {
+
+    $url = CRM_Utils_System::url( 'civicrm/organisation/activities',
+      "reset=1&snippet=1&force=1&cid=$contactID" );
+    $tabs[] = array( 'id'    => 'orgActivities',
+      'url'   => $url,
+      'title' => ts('All Activities'),
+      'weight' => 300,
+    );
+  }
 }
