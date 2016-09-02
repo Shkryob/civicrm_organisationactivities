@@ -13,8 +13,7 @@
                 'sequential': 1,
                 'id': '$value.contact_id_a',
                 'api.Activity.get': {
-                    'sequential': 1,
-                    'id': 627
+                    'sequential': 1
                 }
             }
         };
