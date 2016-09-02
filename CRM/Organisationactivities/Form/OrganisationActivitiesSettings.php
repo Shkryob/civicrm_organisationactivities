@@ -9,10 +9,6 @@ require_once 'CRM/Core/Form.php';
  */
 class CRM_Organisationactivities_Form_OrganisationActivitiesSettings extends CRM_Core_Form {
   public function buildQuickForm() {
-
-    $activityID = Civi::settings()->get('organisation_activities_activity_type_id');
-    $relationTypeID = Civi::settings()->get('organisation_activities_relationship_type_id');
-
     $activityTypes = CRM_Core_OptionGroup::values('activity_type');
     array_unshift($activityTypes, ts('Any'));
     $this->add(
@@ -21,7 +17,7 @@ class CRM_Organisationactivities_Form_OrganisationActivitiesSettings extends CRM
       ts('Activity Type'), // field label
       $activityTypes, // list of options
       TRUE // is required
-    )->setValue($activityID);
+    );
 
     $relTypes = CRM_Contact_BAO_Relationship::getContactRelationshipType(NULL, 'null', NULL, NULL, TRUE);
     array_unshift($relTypes, ts('Any'));
@@ -31,7 +27,7 @@ class CRM_Organisationactivities_Form_OrganisationActivitiesSettings extends CRM
       ts('Relationship Type'), // field label
       $relTypes, // list of options
       TRUE // is required
-    )->setValue($relationTypeID);
+    );
 
     $this->addButtons(array(
       array(
