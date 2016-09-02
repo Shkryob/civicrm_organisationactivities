@@ -17,9 +17,10 @@
                 }
             }
         };
-        if (CRM.vars.organisationactivities.activity_type_id && CRM.vars.organisationactivities.activity_type_id != '0') {
-            searchParams['api.Contact.get']['api.Activity.get']['activity_type_id'] = CRM.vars.organisationactivities.activity_type_id;
-        }
+        // Ignored by API anyway
+        // if (CRM.vars.organisationactivities.activity_type_id && CRM.vars.organisationactivities.activity_type_id != '0') {
+        //     searchParams['api.Contact.get']['api.Activity.get']['activity_type_id'] = CRM.vars.organisationactivities.activity_type_id;
+        // }
         if (CRM.vars.organisationactivities.relation_type_id && CRM.vars.organisationactivities.relation_type_id != '0') {
             searchParams['relationship_type_id'] = parseInt(CRM.vars.organisationactivities.relation_type_id);
         }
@@ -32,7 +33,11 @@
                     for (var activityID in contact['api.Activity.get'].values) {
                         var activity = contact['api.Activity.get'].values[activityID];
                         activity.display_name = contact.display_name;
-                        activities.push(activity);
+                        //Need to filter activities client side because API ignores search parameters
+                        if(!CRM.vars.organisationactivities.activity_type_id
+                            || CRM.vars.organisationactivities.activity_type_id == activity.activity_name) {
+                            activities.push(activity);
+                        }
                     }
                 }
             }
