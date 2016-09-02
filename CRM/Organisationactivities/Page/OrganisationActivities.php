@@ -10,7 +10,9 @@ class CRM_Organisationactivities_Page_OrganisationActivities extends CRM_Core_Pa
     CRM_Core_Resources::singleton()->addScriptFile('com.shkryob.organisationactivities', 'js/OrganisationActivities.js', 200, 'page-header');
 
     $data = array(
-      'org_id' => $_GET['cid']
+      'org_id' => $_GET['cid'],
+      'activity_type_id' => Civi::settings()->get('organisation_activities_activity_type_id'),
+      'relation_type_id' => Civi::settings()->get('organisation_activities_relationship_type_id'),
     );
     CRM_Core_Resources::singleton()->addVars('organisationactivities', $data);
 

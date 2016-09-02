@@ -3,7 +3,13 @@
   <item>
     <path>civicrm/organisation/activities</path>
     <page_callback>CRM_Organisationactivities_Page_OrganisationActivities</page_callback>
-    <title>OrganisationActivities</title>
+    <title>Organisation Activities</title>
     <access_arguments>access CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/setting/organisationactivities</path>
+    <page_callback>CRM_Organisationactivities_Form_OrganisationActivitiesSettings</page_callback>
+    <title>Organisation Activities Settings</title>
+    <access_arguments>administer CiviCRM</access_arguments>
   </item>
 </menu>
