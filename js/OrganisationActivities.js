@@ -20,7 +20,7 @@
         if (CRM.vars.organisationactivities.activity_type_id && CRM.vars.organisationactivities.activity_type_id != '0') {
             searchParams['api.Contact.get']['api.Activity.get']['activity_type_id'] = CRM.vars.organisationactivities.activity_type_id;
         }
-        if (CRM.vars.organisationactivities.relation_type_id && CRM.vars.organisationactivities.activity_type_id != '0') {
+        if (CRM.vars.organisationactivities.relation_type_id && CRM.vars.organisationactivities.relation_type_id != '0') {
             searchParams['relationship_type_id'] = parseInt(CRM.vars.organisationactivities.relation_type_id);
         }
         CRM.api3('Relationship', 'get', searchParams).done(function(result) {
